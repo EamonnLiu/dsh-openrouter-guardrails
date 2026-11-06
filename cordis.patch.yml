@@ -1,0 +1,10 @@
+# dsh-openrouter-guardrails — bundle patch layer.
+#
+# Inserts one host plugin that narrows the `llm-pi-ai` OpenRouter route to the
+# models its API key may use (GET /api/v1/models/user). The route itself
+# (apiKeyEnv, baseURL, api) stays yours; the plugin writes only
+# `providers.openrouter.models` and its own `providers.openrouter-guardrails`
+# route for allowed models the installed catalog does not describe yet.
+- insert:
+    - id: openrouter-guardrails
+      name: dsh-openrouter-guardrails

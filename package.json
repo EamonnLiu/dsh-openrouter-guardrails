@@ -1,0 +1,52 @@
+{
+  "name": "dsh-openrouter-guardrails",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness plugin: show only the OpenRouter models your API key may use (guardrails, privacy settings, provider preferences) via GET /models/user",
+  "license": "MIT",
+  "author": "EamonnLiu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EamonnLiu/dsh-openrouter-guardrails.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EamonnLiu/dsh-openrouter-guardrails/issues"
+  },
+  "homepage": "https://github.com/EamonnLiu/dsh-openrouter-guardrails#readme",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**/*.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.19",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "openrouter",
+    "guardrails",
+    "models"
+  ]
+}
